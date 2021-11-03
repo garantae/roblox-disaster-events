@@ -1,5 +1,5 @@
 # About
-The disaster event function will randomly select whether or not there should be an event in a current match. If there is, it will randomly select a disaster which currently are only two: lava rain and blizzard.
+The disaster event function will randomly select whether or not there should be an event in a current match. Upon eligible for an event, it will randomly select a disaster to take place. Currently, there are two disasters available: lava rain and blizzard.
 
 # Functions
 * #### Event Eligibility
