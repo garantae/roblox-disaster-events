@@ -68,8 +68,8 @@ StatusHeader.Changed:Connect(function()
 					local FloorParts = workspace.CurrentMap:FindFirstChild(ChosenMap.Value):FindFirstChild("MapTileFloor"):GetChildren()
 					local RandomFloorPart = FloorParts[math.random(1,#FloorParts)]
 					
-					if not RandomFloorPart:FindFirstChild("LavaBurnScript") then
-						local BurnScript = script.LavaBurnScript:Clone()
+					if not RandomFloorPart:FindFirstChild("LavaDamage") then
+						local BurnScript = script.LavaDamage:Clone()
 						BurnScript.Disabled = false
 						BurnScript.Parent = RandomFloorPart
 					end
@@ -107,8 +107,8 @@ StatusHeader.Changed:Connect(function()
 					local FloorParts = workspace.CurrentMap:FindFirstChild(ChosenMap.Value):FindFirstChild("MapTileFloor"):GetChildren()
 					local RandomFloorPart = FloorParts[math.random(1,#FloorParts)]
 
-					if not RandomFloorPart:FindFirstChild("BlizzardSlowScript") then
-						local SlowScript = script.BlizzardSlowScript:Clone()
+					if not RandomFloorPart:FindFirstChild("BlizzardDamage") then
+						local SlowScript = script.BlizzardDamage:Clone()
 						SlowScript.Disabled = false
 						SlowScript.Parent = RandomFloorPart
 					end
