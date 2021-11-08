@@ -8,6 +8,7 @@ local SlowTime = 1.5
 local IceDamage = 15
 local IceSlow = 10
 
+--// Turn selected tiles into ice tiles
 if script.Parent:IsA("Part") then
 	script.Parent.BrickColor = BrickColor.new("Cyan")
 	script.Parent.Material = Enum.Material.Ice
@@ -15,6 +16,7 @@ if script.Parent:IsA("Part") then
 	IceTexture:Clone().Parent = script.Parent
 end
 
+--// Function when player touches ice tile
 script.Parent.Touched:Connect(function(hit)
 	if hit.Parent:FindFirstChild("Humanoid") and Debounce == false then
 		Debounce = true
