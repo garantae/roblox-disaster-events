@@ -7,6 +7,7 @@ local LavaTexture = script.LavaTexture
 local BurnTime = 1.2
 local BurnDamage = 25
 
+--// Turn selected tiles into lava tiles
 if script.Parent:IsA("Part") then
 	script.Parent.BrickColor = BrickColor.new("Neon orange")
 	script.Parent.Material = Enum.Material.Neon
@@ -14,6 +15,7 @@ if script.Parent:IsA("Part") then
 	LavaTexture:Clone().Parent = script.Parent
 end
 
+--// Function when player touches lava tile
 script.Parent.Touched:Connect(function(hit)
 	if hit.Parent:FindFirstChild("Humanoid") and Debounce == false then
 		Debounce = true
@@ -22,7 +24,7 @@ script.Parent.Touched:Connect(function(hit)
 			hit.Parent:FindFirstChild("Humanoid").Health = hit.Parent:FindFirstChild("Humanoid").Health - BurnDamage
 			
 			
-			-- Add the fire effect
+			--// Add the fire effect
 			if hit.Parent:FindFirstChild("HumanoidRootPart") then
 				local FireInstance = Instance.new("Fire")
 				FireInstance:Clone()
@@ -32,7 +34,7 @@ script.Parent.Touched:Connect(function(hit)
 			
 			wait(BurnTime)
 			
-			-- Delete the fire effect
+			--// Delete the fire effect
 			if hit.Parent:FindFirstChild("HumanoidRootPart") then
 				if hit.Parent:FindFirstChild("HumanoidRootPart"):FindFirstChild("FireFromLava") then
 					hit.Parent:FindFirstChild("HumanoidRootPart"):FindFirstChild("FireFromLava").Enabled = false
