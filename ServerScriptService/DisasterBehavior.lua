@@ -26,10 +26,10 @@ StatusHeader.Changed:Connect(function()
 		
 		wait(StartingWait)
 		
-		-- Check if the map is compatible
+		--// Check if the map is compatible
 		if workspace.CurrentMap:FindFirstChild(ChosenMap.Value):FindFirstChild("MapTileFloor") then
 			
-			-- Check if a disaster will occur
+			--// Check if a disaster will occur
 			math.randomseed(tick())
 			math.random()
 			
@@ -40,17 +40,17 @@ StatusHeader.Changed:Connect(function()
 			--// Lava Rain Disaster
 			if range == 1 and workspace.CurrentMap:FindFirstChild(ChosenMap.Value):FindFirstChild("LavaRainParticles") then
 				
-				-- Fire client
+				--// Fire client
 				DisasterDetails = "LAVA RAIN! Avoid all lava-covered tiles!"
 				game.ReplicatedStorage.CORE_RemoteEvents.SendDisasterDetails:FireAllClients(DisasterDetails)
 				
-				-- Change the sky
+				--// Change the sky
 				if game.Lighting:FindFirstChild(ChosenSky.Value) then
 					RedSky:Clone().Parent = game.Lighting
 					game.Lighting:FindFirstChild(ChosenSky.Value):Destroy()
 				end
 				
-				-- Enable the particles
+				--// Enable the particles
 				if workspace.CurrentMap:FindFirstChild(ChosenMap.Value):FindFirstChild("LavaRainParticles") then
 					for _, ParticlePart in pairs(workspace.CurrentMap:FindFirstChild(ChosenMap.Value):FindFirstChild("LavaRainParticles"):GetChildren()) do
 						if ParticlePart then
@@ -61,7 +61,7 @@ StatusHeader.Changed:Connect(function()
 					end
 				end
 				
-				-- START THE DISASTER!
+				--// START THE DISASTER!
 				while StatusHeader.Value == "GAME IN PROGRESS" do
 					wait(NextLavaRain)
 					
@@ -79,17 +79,17 @@ StatusHeader.Changed:Connect(function()
 			--// Blizzard Disaster
 			if range == 2 and workspace.CurrentMap:FindFirstChild(ChosenMap.Value):FindFirstChild("IceRainParticles") then
 
-				-- Fire client
+				--// Fire client
 				DisasterDetails = "BLIZZARD! Avoid all ice-covered tiles!"
 				game.ReplicatedStorage.CORE_RemoteEvents.SendDisasterDetails:FireAllClients(DisasterDetails)
 
-				-- Change the sky
+				--// Change the sky
 				if game.Lighting:FindFirstChild(ChosenSky.Value) then
 					WhiteSky:Clone().Parent = game.Lighting
 					game.Lighting:FindFirstChild(ChosenSky.Value):Destroy()
 				end
 
-				-- Enable the particles
+				--// Enable the particles
 				if workspace.CurrentMap:FindFirstChild(ChosenMap.Value):FindFirstChild("IceRainParticles") then
 					for _, ParticlePart in pairs(workspace.CurrentMap:FindFirstChild(ChosenMap.Value):FindFirstChild("IceRainParticles"):GetChildren()) do
 						if ParticlePart then
@@ -100,7 +100,7 @@ StatusHeader.Changed:Connect(function()
 					end
 				end
 
-				-- START THE DISASTER!
+				--// START THE DISASTER!
 				while StatusHeader.Value == "GAME IN PROGRESS" do
 					wait(NextBlizzard)
 
